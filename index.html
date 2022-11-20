@@ -9,46 +9,62 @@
   <script src="https://kit.fontawesome.com/1ea08f8058.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
   <title>Form</title>
 </head>
 <body>
 <form action="" method="post" class="form">
   <header class="form__header form-header">
     <section class="form-header__section">
-      <div class="form-header__">
-        <div class="form-header__icon">
-          <img src="./assets/icons/order-icon.png" alt="order list">
-        </div>
+      <img src="./assets/icons/order-icon.png"
+           alt="order list"
+           class="form-header__icon">
+      <div class="form-header__section-content">
         <h3 class="form-header__title">Your order</h3>
-        <ul class="order-list">
+        <ul class="order-list" role="list">
           <li class="order-list__item">
             <span class="order-list__item-title">items</span>
             <span class="order-list__item-product">2 documents</span>
           </li>
+          <li class="order-list__item">
+            <span class="order-list__item-title">Details</span>
+            <span class="order-list__item-product">2 languages</span>
+          </li>
+          <li class="order-list__item">
+            <span class="order-list__item-title">price</span>
+            <span class="order-list__item-product">$ 696.06</span>
+          </li>
+          <li class="order-list__item">
+            <span class="order-list__item-title">delivery</span>
+            <span class="order-list__item-product">48 hours*</span>
+          </li>
         </ul>
-        <div class="form-header__buttons">
-          <button class="button button--success" type="submit">
-            place order
-          </button>
-          <button class="button" type="button">
-            print a quote
-          </button>
-        </div>
+      </div>
+      <div class="form-header__buttons">
+        <button class="button button--success" type="submit">
+          place order
+        </button>
+        <button class="button button--primary" type="button">
+          print a quote
+        </button>
       </div>
     </section>
-    <section class="form-header__section form-header__section--right">
-      <div class="form-header__icon">
-        <img src="assets/icons/help-center-icon.png" alt="help center">
-      </div>
+    <section class="form-header__section">
+      <img src="assets/icons/help-center-icon.png"
+           alt="help center"
+           class="form-header__icon">
       <div class="help-center">
-        <h3 class="header-section__title">Help center</h3>
+        <h3 class="help-center__title form-header__title">Help center</h3>
         <p class="help-center__text">If you need assistance while placing your order, contact one of your beloved
-          Project Manager by phone</p>
-        <address class="help-center__contact">+971 (0) 555 555</address>
-        <address class="help-center__contact">
-          <a href="mailto:help@qtest.com">help@qtest.com</a>
-        </address>
+          Project Manager by phone or email</p>
+        <div class="help-center__contacts">
+          <address class="help-center__contact">
+            <a href="tel:+971 (0) 555 555">+971 (0) 555 555</a>
+          </address>
+          <address class="help-center__contact">
+            <a href="mailto:help@qtest.com">help@qtest.com</a>
+          </address>
+        </div>
       </div>
     </section>
   </header>
@@ -56,30 +72,39 @@
     <div class="container">
       <h3 class="form__subtitle select-section__title">Select what you want to translate</h3>
       <div class="select-section__radio-group">
-        <div class="radio-btn-wrapper">
+        <div class="select-section__radio-wrapper radio-btn-wrapper">
+          <img src="./assets/document-radio.png" alt="social account">
+          <span class="select-section__radio-text">Social Account</span>
           <input type="radio"
                  name="select-translation"
                  id="select-translation-r1"
                  class="radio-btn"
-                 title="Choose what you want to translate">
+                 title="Choose what you want to translate"
+                 required>
           <label for="select-translation-r1"
                  class="radio-btn-label"></label>
         </div>
-        <div class="radio-btn-wrapper">
+        <div class="select-section__radio-wrapper radio-btn-wrapper">
+          <img src="./assets/document-radio.png" alt="website">
+          <span class="select-section__radio-text">Website</span>
           <input type="radio"
                  name="select-translation"
                  id="select-translation-r2"
                  class="radio-btn"
-                 title="Choose what you want to translate">
+                 title="Choose what you want to translate"
+                 required>
           <label for="select-translation-r2"
                  class="radio-btn-label"></label>
         </div>
-        <div class="radio-btn-wrapper">
+        <div class="select-section__radio-wrapper radio-btn-wrapper">
+          <img src="./assets/document-radio.png" alt="documents">
+          <span class="select-section__radio-text">Documents</span>
           <input type="radio"
                  name="select-translation"
                  id="select-translation-r3"
                  class="radio-btn"
-                 title="Choose what you want to translate">
+                 title="Choose what you want to translate"
+                 required>
           <label for="select-translation-r3"
                  class="radio-btn-label"></label>
         </div>
@@ -200,103 +225,103 @@
       </div>
     </div>
   </section>
-  <section class="form__section sign-up">
-    <div class="container">
-      <h2 class="form-section__title">Sign up and choose a payment method</h2>
-      <span class="sign-up__span">Already have an account with us?
-        <a href="#" class="sign-up__link">Sign in</a>
-      </span>
-      <div class="sign-up__input-wrapper">
-        <input type="text"
-               name="full-name"
-               id="full-name"
-               minlength="2"
-               title="Write your full name"
-               required>
-        <label for="full-name"
-               class="sign-up__input-label">Full name</label>
-      </div>
-      <div class="sign-up__input-wrapper">
-        <input type="email"
-               inputmode="email"
-               name="full-name"
-               id="email"
-               title="Write your email"
-               required>
-        <label for="email"
-               class="sign-up__input-label">Email</label>
-      </div>
-      <div class="sign-up__input-wrapper radio-btn-wrapper">
-        <input type="password"
-               inputmode="password"
-               name="password"
-               id="password"
-               minlength="8"
-               title="Write your password"
-               required
-               class="radio-btn">
-        <label for="password"
-               class="sign-up__input-label">Choose a password</label>
-      </div>
-      <div class="sign-up__radio-group">
-        <div class="sign-up__radio_wrapper radio-btn-wrapper">
-          <input type="radio"
-                 name="checkout-method"
-                 id="checkout-radio-1"
-                 title="Choose your checkout method"
-                 class="radio-btn">
-          <label for="checkout-radio-1" class="radio-btn-label"></label>
-        </div>
-        <div class="sign-up__radio_wrapper radio-btn-wrapper">
-          <input type="radio"
-                 name="checkout-method"
-                 id="checkout-radio-2"
-                 title="Choose your checkout method"
-                 class="radio-btn">
-          <label for="checkout-radio-2"
-                 class="radio-btn-label"></label>
-        </div>
-        <div class="sign-up__radio_wrapper radio-btn-wrapper">
-          <input type="radio"
-                 name="checkout-method"
-                 id="checkout-radio-3"
-                 title="Choose your checkout method"
-                 class="radio-btn">
-          <label for="checkout-radio-3" class="radio-btn-label"></label>
-        </div>
-      </div>
-      <div class="sign-up__input-wrapper form__input-wrapper">
-        <input type="number"
-               inputmode="numeric"
-               title="Write valid card number"
-               id="card-number-input"
-               name="card-number"
-               class="sign-up__input form__input"
-               required>
-        <label for="card-number-input">Card number</label>
-      </div>
-      <div class="sign-up__input-wrapper form__input-wrapper">
-        <input id="date-input"
-               type="date"
-               name="card-date"
-               placeholder="DD/MM/YY"
-               class="sign-up__input form__input"
-               title="Write valid date"
-               required>
-        <label for="date-input">Expiry Date</label>
-      </div>
-      <div class="sign-up__input-wrapper form__input-wrapper">
-        <input type="number"
-               inputmode="numeric"
-               title="Write valid card number"
-               id="card-code-input"
-               name="card-code"
-               class="sign-up__input form__input"
-               required>
-        <label for="card-code-input">Card code</label>
-      </div>
-    </div>
-  </section>
+  <!--  <section class="form__section sign-up">-->
+  <!--    <div class="container">-->
+  <!--      <h2 class="form-section__title">Sign up and choose a payment method</h2>-->
+  <!--      <span class="sign-up__span">Already have an account with us?-->
+  <!--        <a href="#" class="sign-up__link">Sign in</a>-->
+  <!--      </span>-->
+  <!--      <div class="sign-up__input-wrapper">-->
+  <!--        <input type="text"-->
+  <!--               name="full-name"-->
+  <!--               id="full-name"-->
+  <!--               minlength="2"-->
+  <!--               title="Write your full name"-->
+  <!--               required>-->
+  <!--        <label for="full-name"-->
+  <!--               class="sign-up__input-label">Full name</label>-->
+  <!--      </div>-->
+  <!--      <div class="sign-up__input-wrapper">-->
+  <!--        <input type="email"-->
+  <!--               inputmode="email"-->
+  <!--               name="full-name"-->
+  <!--               id="email"-->
+  <!--               title="Write your email"-->
+  <!--               required>-->
+  <!--        <label for="email"-->
+  <!--               class="sign-up__input-label">Email</label>-->
+  <!--      </div>-->
+  <!--      <div class="sign-up__input-wrapper radio-btn-wrapper">-->
+  <!--        <input type="password"-->
+  <!--               inputmode="password"-->
+  <!--               name="password"-->
+  <!--               id="password"-->
+  <!--               minlength="8"-->
+  <!--               title="Write your password"-->
+  <!--               required-->
+  <!--               class="radio-btn">-->
+  <!--        <label for="password"-->
+  <!--               class="sign-up__input-label">Choose a password</label>-->
+  <!--      </div>-->
+  <!--      <div class="sign-up__radio-group">-->
+  <!--        <div class="sign-up__radio_wrapper radio-btn-wrapper">-->
+  <!--          <input type="radio"-->
+  <!--                 name="checkout-method"-->
+  <!--                 id="checkout-radio-1"-->
+  <!--                 title="Choose your checkout method"-->
+  <!--                 class="radio-btn">-->
+  <!--          <label for="checkout-radio-1" class="radio-btn-label"></label>-->
+  <!--        </div>-->
+  <!--        <div class="sign-up__radio_wrapper radio-btn-wrapper">-->
+  <!--          <input type="radio"-->
+  <!--                 name="checkout-method"-->
+  <!--                 id="checkout-radio-2"-->
+  <!--                 title="Choose your checkout method"-->
+  <!--                 class="radio-btn">-->
+  <!--          <label for="checkout-radio-2"-->
+  <!--                 class="radio-btn-label"></label>-->
+  <!--        </div>-->
+  <!--        <div class="sign-up__radio_wrapper radio-btn-wrapper">-->
+  <!--          <input type="radio"-->
+  <!--                 name="checkout-method"-->
+  <!--                 id="checkout-radio-3"-->
+  <!--                 title="Choose your checkout method"-->
+  <!--                 class="radio-btn">-->
+  <!--          <label for="checkout-radio-3" class="radio-btn-label"></label>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--      <div class="sign-up__input-wrapper form__input-wrapper">-->
+  <!--        <input type="number"-->
+  <!--               inputmode="numeric"-->
+  <!--               title="Write valid card number"-->
+  <!--               id="card-number-input"-->
+  <!--               name="card-number"-->
+  <!--               class="sign-up__input form__input"-->
+  <!--               required>-->
+  <!--        <label for="card-number-input">Card number</label>-->
+  <!--      </div>-->
+  <!--      <div class="sign-up__input-wrapper form__input-wrapper">-->
+  <!--        <input id="date-input"-->
+  <!--               type="date"-->
+  <!--               name="card-date"-->
+  <!--               placeholder="DD/MM/YY"-->
+  <!--               class="sign-up__input form__input"-->
+  <!--               title="Write valid date"-->
+  <!--               required>-->
+  <!--        <label for="date-input">Expiry Date</label>-->
+  <!--      </div>-->
+  <!--      <div class="sign-up__input-wrapper form__input-wrapper">-->
+  <!--        <input type="number"-->
+  <!--               inputmode="numeric"-->
+  <!--               title="Write valid card number"-->
+  <!--               id="card-code-input"-->
+  <!--               name="card-code"-->
+  <!--               class="sign-up__input form__input"-->
+  <!--               required>-->
+  <!--        <label for="card-code-input">Card code</label>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </section>-->
   <footer class="form__footer">
     <div class="container">
       <div class="form__footer-checkbox">
